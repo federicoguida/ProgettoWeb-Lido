@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<Context path="guidafederico">
+	<Resource auth="Container"
+		driverClassName="com.mysql.cj.jdbc.Driver"
+		factory="org.apache.tomcat.jdbc.pool.DataSourceFactory"
+		maxActive="10"
+		minIdle="2"
+        maxIdle="6"
+		maxWait="1000"
+		logAbandoned="true"
+		removeAbandoned="true"
+		removeAbandonedTimeout="60"
+		name="jdbc/guida"
+		username="root"
+		password="root"
+		type="javax.sql.DataSource"
+		url="jdbc:mysql://localhost:3306/guida?useLegacyDatetimeCode=false&amp;serverTimezone=Europe/Rome&amp;allowMultiQueries=true"
+		testOnBorrow="true"
+		validationQuery="SELECT 1" />
+		
+	<Realm className="org.apache.catalina.realm.DataSourceRealm"
+		dataSourceName="jdbc/guida"
+		localDataSource="true"
+		userTable="user"
+		userNameCol="Email"
+		userCredCol="Password"
+		userRoleTable="user"
+		roleNameCol="Role" />
+</Context>
