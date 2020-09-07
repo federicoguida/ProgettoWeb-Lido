@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" version="4.0">
+  <display-name>guidafederico</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- List of security constraint -->
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>reserved</web-resource-name>
+      <url-pattern>/view/personalarea/</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+      <role-name>user</role-name>
+      <role-name>cook</role-name>
+      <role-name>cashier</role-name>
+      <role-name>receptionist</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+   <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>reserved</web-resource-name>
+      <url-pattern>/view/personalarea/admin/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>admin</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>reserved</web-resource-name>
+      <url-pattern>/view/personalarea/user/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>user</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+   <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>reserved</web-resource-name>
+      <url-pattern>/view/personalarea/kitchen/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>cook</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+   <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>reserved</web-resource-name>
+      <url-pattern>/view/personalarea/cashier/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>cashier</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+  <security-constraint>
+    <web-resource-collection>
+      <web-resource-name>reserved</web-resource-name>
+      <url-pattern>/view/personalarea/receptionist/*</url-pattern>
+    </web-resource-collection>
+    <auth-constraint>
+      <role-name>receptionist</role-name>
+    </auth-constraint>
+  </security-constraint>
+  
+  <!-- List of security role -->
+  <security-role>
+    <role-name>admin</role-name>
+  </security-role>
+  
+  <security-role>
+    <role-name>user</role-name>
+  </security-role>
+    
+  <security-role>
+    <role-name>cook</role-name>
+  </security-role>
+  
+  <security-role>
+    <role-name>cashier</role-name>
+  </security-role>
+  
+  <security-role>
+    <role-name>receptionist</role-name>
+  </security-role>
+
+  <login-config>
+    <auth-method>FORM</auth-method>
+    <form-login-config>
+      <form-login-page>/WEB-INF/view/home/login.jsp</form-login-page>
+      <form-error-page>/WEB-INF/view/home/login.jsp?show=logerror</form-error-page>
+    </form-login-config>
+  </login-config>
+  
+  <!-- SMTP Configuration START -->
+    <context-param>
+        <param-name>host</param-name>
+        <param-value>smtp.gmail.com</param-value>
+    </context-param>
+ 
+    <context-param>
+        <param-name>port</param-name>
+        <param-value>465</param-value>
+    </context-param>
+ 
+    <context-param>
+        <param-name>user</param-name>
+        <param-value>esamewebguida@gmail.com</param-value>
+    </context-param>
+ 
+    <context-param>
+        <param-name>pass</param-name>
+        <param-value>esamewebguida2020</param-value>
+    </context-param>
+  <!-- END -->
+  
+  <!-- Upload dir restaurant images -->
+  <context-param>
+        <param-name>dir</param-name>
+        <param-value>C:\Users\39351\Desktop\GuidaFederico\images</param-value>
+    </context-param>
+</web-app>
