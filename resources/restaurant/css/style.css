@@ -1,0 +1,383 @@
+.pic-1 {
+	width:200px;
+	height:200px;
+}
+
+.pic-2 {
+	width:200px;
+	height:200px;
+}
+
+.photo-gallery {
+  color: #313437;
+  background-color: #fff;
+}
+
+.photo-gallery p {
+  color: #7d8285;
+}
+
+.photo-gallery h2 {
+  font-weight: bold;
+  margin-bottom: 40px;
+  padding-top: 40px;
+  color: inherit;
+}
+
+@media (max-width:767px) {
+  .photo-gallery h2 {
+    margin-bottom: 25px;
+    padding-top: 25px;
+    font-size: 24px;
+  }
+}
+
+.photo-gallery .intro {
+  font-size: 16px;
+  max-width: 500px;
+  margin: 0 auto 40px;
+}
+
+.photo-gallery .intro p {
+  margin-bottom: 0;
+}
+
+.photo-gallery .photos {
+  padding-bottom: 20px;
+}
+
+.photo-gallery .item {
+  padding-bottom: 30px;
+}
+
+.product-grid7 {
+  font-family: 'Roboto Slab',serif;
+  position: relative;
+  z-index: 1;
+}
+
+.product-grid7 .product-image7 {
+  border: 1px solid rgba(0,0,0,.1);
+  overflow: hidden;
+  perspective: 1500px;
+  position: relative;
+  transition: all .3s ease 0s;
+}
+
+.product-grid7 .product-image7 a {
+  display: block;
+}
+
+.product-grid7 .product-image7 img {
+  width: 100%;
+  height: auto;
+}
+
+.product-grid7 .pic-1 {
+  opacity: 1;
+  transition: all .5s ease-out 0s;
+}
+
+.product-grid7 .pic-2 {
+  opacity: 0;
+  transform: rotateY(-90deg);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: all .5s ease-out 0s;
+}
+
+.product-grid7:hover .pic-2 {
+  opacity: 1;
+  transform: rotateY(0);
+}
+
+.product-grid7 .social {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  bottom: 3px;
+  left: -20%;
+  z-index: 1;
+  transition: all .5s ease 0s;
+}
+
+.product-grid7:hover .social {
+  left: 17px;
+}
+
+.product-grid7 .social li a {
+  color: #fff;
+  background-color: #333;
+  font-size: 16px;
+  line-height: 40px;
+  text-align: center;
+  height: 40px;
+  width: 40px;
+  margin: 15px 0;
+  border-radius: 50%;
+  display: block;
+  transition: all .5s ease-in-out;
+}
+
+.product-grid7 .social li a:hover {
+  color: #fff;
+  background-color: #78e08f;
+}
+
+.product-grid7 .product-new-label {
+  color: #fff;
+  background-color: #333;
+  padding: 5px 10px;
+  border-radius: 5px;
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.product-grid7 .product-content {
+  text-align: center;
+  padding: 20px 0 0;
+}
+
+.product-grid7 .title {
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin: 0 0 10px;
+  transition: all .3s ease 0s;
+}
+
+.product-grid7 .title a {
+  color: #333;
+}
+
+.product-grid7 .title a:hover {
+  color: #78e08f;
+}
+
+.product-grid7 .rating {
+  color: #78e08f;
+  font-size: 12px;
+  padding: 0;
+  margin: 0 0 10px;
+  list-style: none;
+}
+
+.product-grid7 .price {
+  color: #333;
+  font-size: 20px;
+  font-family: Lora,serif;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+  transition: all .3s;
+}
+
+.product-grid7 .price span {
+  color: #999;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: line-through;
+  margin-left: 7px;
+  display: inline-block;
+}
+
+@media only screen and (max-width:990px) {
+  .product-grid7 {
+    margin-bottom: 30px;
+  }
+}
+
+.shopping-grid {
+  margin-top: 10px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.shopping-grid h3 {
+  font-family: 'Roboto';
+  font-size: 32px;
+  margin-bottom: 40px;
+  padding-top: 40px;
+}
+
+.shopping-grid {
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+.sp-loading {
+  text-align: center;
+  max-width: 270px;
+  padding: 15px;
+  border: 5px solid #eee;
+  border-radius: 3px;
+  font-size: 12px;
+  color: #888;
+}
+
+.sp-wrap {
+  display: none;
+  line-height: 0;
+  font-size: 0;
+  background: #eee;
+  border: 5px solid #eee;
+  border-radius: 3px;
+  position: relative;
+  margin: 0 25px 15px 0;
+  float: left;
+  max-width: 300px;
+}
+
+.sp-thumbs {
+  text-align: left;
+  display: inline-block;
+}
+
+.sp-thumbs img {
+  min-height: 50px;
+  min-width: 50px;
+  max-width: 50px;
+}
+
+.sp-thumbs a:link, .sp-thumbs a:visited {
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  opacity: .3;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  -webkit-transition: all .2s ease-out;
+  -moz-transition: all .2s ease-out;
+  -ms-transition: all .2s ease-out;
+  -o-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+}
+
+.sp-thumbs a:hover {
+  opacity: 1;
+}
+
+.sp-thumbs a:active, .sp-current {
+  opacity: 1!important;
+  position: relative;
+}
+
+.sp-large {
+  position: relative;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.sp-large a img {
+  max-width: 100%;
+  height: auto;
+}
+
+.sp-large a {
+  display: block;
+}
+
+.sp-zoom {
+  position: absolute;
+  left: -50%;
+  top: -50%;
+  cursor: -webkit-zoom-in;
+  cursor: -moz-zoom-in;
+  cursor: zoom-in;
+  display: none;
+}
+
+.sp-lightbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, .9);
+  z-index: 1031;
+  display: none;
+  cursor: pointer;
+}
+
+.sp-lightbox img {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-width: 90%;
+  max-height: 90%;
+  border: 2px solid #fff;
+}
+
+#sp-prev, #sp-next {
+  position: absolute;
+  top: 50%;
+  margin-top: -25px;
+  z-index: 501;
+  color: #fff;
+  padding: 14px;
+  text-decoration: none;
+  background: #000;
+  border-radius: 25px;
+  border: 2px solid #fff;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  transition: .2s;
+}
+
+#sp-prev {
+  left: 10px;
+}
+
+#sp-prev:before {
+  content: '';
+  border: 7px solid transparent;
+  border-right: 15px solid #fff;
+  position: absolute;
+  top: 16px;
+  left: 7px;
+}
+
+#sp-next {
+  right: 10px;
+}
+
+#sp-next:before {
+  content: '';
+  border: 7px solid transparent;
+  border-left: 15px solid white;
+  position: absolute;
+  top: 16px;
+  left: 18px;
+}
+
+#sp-prev:hover, #sp-next:hover {
+  background: #444;
+}
+
+@media screen and (max-width: 400px) {
+  .sp-wrap {
+    margin: 0 0 15px 0;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #sp-prev, #sp-next {
+    top: auto;
+    margin-top: 0;
+    bottom: 25px;
+  }
+}
