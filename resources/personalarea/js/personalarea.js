@@ -89,21 +89,21 @@ $(document).ready(function(){
 						data: {action: "info", order_id: $id},
 						dataType: "json",
 						success: function (data) {
-							var infoTable="<div id=\"infoDiv\"class=\"table-responsive\">"+
+							var infoTable="<div id=\"infoDiv"+$id+"\"class=\"table-responsive\">"+
 					        "<table class=\"table\">"+
 					        "<thead>"+
 					            "<tr><th>Prodotto</th><th>Quantit&agrave;</th></tr>" +
 					        "</thead>" +
 					        "<tbody>";
 							$.each( data, function( key, val ) {
-								infoTable+="<td>"+val.name+"</td>"
+								infoTable+="<tr><td>"+val.name+"</td>"
 							     + "<td>"+val.quantity+"</td></tr>";
 							})
-							infoTable+="</tbody></table><p>Istruzioni cuoco: <br> "+data[0].instruction+"</p></br></br>" +
-									"<button id=\"hideInfo\" class=\"btn btn-primary\">Torna indietro</button></div>";
+							infoTable+="</tbody></table><p>Istruzioni cuoco: </br> "+data[0].instruction+"</p></br></br>" +
+									"<button id=\"hideInfo"+$id+"\" class=\"btn btn-primary\">Torna indietro</button></div>";
 							$('#td'+$id).append(infoTable);
-							$('#hideInfo').on('click',function(){
-								$(this).parent('#infoDiv').remove();
+							$("#hideInfo"+$id).on('click',function(){
+								$('#infoDiv'+$id).remove();
 								$(button).show();
 							})
 						}

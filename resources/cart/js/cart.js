@@ -67,7 +67,6 @@ $(document).ready(function () {
 				               "</div>");
 		}else{
 			var instruction = $('#instruction > textarea').val()
-			console.log($('#instruction > textarea').val());
 			$.ajax({
 				type: "GET",
 				url: "/guidafederico/view/personalarea/user/restaurant/order",
@@ -87,8 +86,14 @@ $(document).ready(function () {
 									"<strong>Attenzione! Il carrello non contiene elementi non &egrave; possibile procedere con l'ordine</strong>"+
 		                       "</div>");
 		}else{
-			$.session.set("instruction", $('#instruction').val());
-			$('#prenotation_form').submit();
+			$.ajax({
+				type: "GET",
+				url: "/guidafederico/view/personalarea/user/restaurant/order",
+				data: { ins: $('#instruction > textarea').val() , action: "instruction" },
+				success: function () {
+					$('#prenotation_form').submit();
+				}
+			});
 		}
 	})
 	

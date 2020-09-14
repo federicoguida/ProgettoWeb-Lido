@@ -5,7 +5,7 @@ $(document).ready(function(){
 	$('[data-bs-tooltip]').tooltip();
 	var today=new Date();
 	var button = $('#pay');
-	if(today.getHours()<15 || today.getHours()>20){
+	if(today.getHours()<15 || today.getHours()>19){
 		$.ajax({
 			type: "GET",
 			url: "/guidafederico/view/personalarea/user/lido",
